@@ -1,8 +1,12 @@
-package org.adamtomaja.jmcrcon;
+package org.adamtomaja.jmcrcontest;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.logging.Logger;
+
+import org.adamtomaja.jmcrcon.InvalidReqestIdException;
+import org.adamtomaja.jmcrcon.NotLoggedException;
+import org.adamtomaja.jmcrcon.Server;
 
 /**
  * Test klasy Server
