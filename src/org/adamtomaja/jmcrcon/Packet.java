@@ -4,7 +4,8 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 /**
- * Represents packet
+ * Reprezentuje pakiet. 
+ * Służy do intepretacji tablic bajtów oraz do ich tworzenia
  * @author AdamTomaja
  */
 public class Packet {
@@ -45,6 +46,11 @@ public class Packet {
 	protected int request;
 	byte [] content;
 	
+	/**
+	 * Tworzy nowy obiekt pakietu na podstawie otrzymanych z serwera danych
+	 * @param bytes
+	 * @param bytesRead
+	 */
 	public Packet(byte [] bytes, int bytesRead)
 	{
 		ByteBuffer buff = ByteBuffer.wrap(bytes, 0, bytesRead);
@@ -60,6 +66,13 @@ public class Packet {
 		
 		buff.get(content);
 	}
+	/**
+	 * Tworzy nowy obiekt pakietu na podstawie podanych danych.
+	 * Służy do tworzenia tablicy bajtów do wysłania
+	 * @param request
+	 * @param type
+	 * @param content
+	 */
 	public Packet(int request, int type, byte [] content)
 	{
 		this.request = request;
@@ -67,10 +80,18 @@ public class Packet {
 		this.content = content;
 		this.length = 4 + 4 + content.length + 2;
 	}
+	/**
+	 * Zwraca tekst znajdujący się w pakiecie
+	 * @return
+	 */
 	public String getContentString()
 	{
 		return new String(getContent(), StandardCharsets.US_ASCII);
 	}
+	/**
+	 * Zwraca tablicę bajtów gotową do wysłania
+	 * @return tablica bajtów reprezentująca pakiet
+	 */
 	public byte [] getPayload()
 	{
  		byte [] payload = new byte[length + 4]; // Dodajemy jeden bajt, potrzebny na wysłanie długości pakietu
@@ -86,6 +107,9 @@ public class Packet {
 		
 		return payload;
 	}
+	/**
+	 * Testowa tekstowa reprezentacja pakietu
+	 */
 	@Override
 	public String toString()
 	{
