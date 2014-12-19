@@ -1,13 +1,11 @@
 package org.adamtomaja.jmcrcon;
 
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
  * Reprezentuje serwer. Służy do łączenia, wykonywania komend i odbierania wyników.
@@ -119,7 +117,7 @@ public class Server
 		sock = new Socket(host, port);
 		log.info("Connected with " + this);
 		sendPacket(PacketTypes.LOGIN, password );
-		Packet receivedPacket = receivePacket();
+		receivePacket();
 		logged = true;
 	}
 	/**

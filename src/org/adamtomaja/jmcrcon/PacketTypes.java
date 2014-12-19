@@ -1,4 +1,5 @@
 package org.adamtomaja.jmcrcon;
+
 /**
  * Zawiera stałe reprezentujące typy pakietów
  * @author unborn
