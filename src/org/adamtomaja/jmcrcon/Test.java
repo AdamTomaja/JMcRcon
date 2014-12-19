@@ -10,11 +10,6 @@ import java.util.logging.Logger;
  *
  */
 public class Test {
-
-	static private int randomInt()
-	{
-		return (int)(Math.random() * 100);
-	}
 	public static void main(String[] args)  
 	{
 		//Tworzymy nowy obiekt serwera z jego parametrami
