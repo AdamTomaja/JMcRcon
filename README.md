@@ -1,7 +1,7 @@
 JMcRcon
 =======
-
-Prosta klasa do obsługi protokołu RCON serwera Minecraft
+Biblioteka napisana w języku Java służąca do obsługi protokołu RCON w serwerach Minecraft.
+Służy do zdalnego wykonywania poleceń konsolowych serwera.
 
 Aby korzystać z RCON należy w pliki server.properties dodać następujące opcje:
 
